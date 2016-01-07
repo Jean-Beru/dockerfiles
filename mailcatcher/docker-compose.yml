@@ -1,0 +1,5 @@
+app:
+  build: .
+  name: mailcatcher
+  ports:
+      - 1080:1080
