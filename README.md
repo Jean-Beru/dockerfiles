@@ -1,6 +1,6 @@
 Dockerfiles
------------
+===========
 
 Collection of some useful Dockerfiles :
 
- * [Mailcatcher](http://mailcatcher.me) Catches mail and serves it through a dream.
+ * [Mailcatcher](http://mailcatcher.me) catches mail and serves it through a dream.

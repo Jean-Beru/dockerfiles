@@ -1,14 +1,10 @@
-FROM debian:wheezy
+FROM alpine:latest
 
-RUN apt-get update \
-    && apt-get install -y ruby ruby-dev build-essential sqlite3 libsqlite3-dev \
+RUN apk add --update ruby ruby-dev ruby-bigdecimal sqlite sqlite-dev build-base libstdc++ \
     && gem install mailcatcher --no-ri --no-rdoc \
-    && apt-get remove --purge -y build-essential ruby-dev libsqlite3-dev \
-    && apt-get autoclean \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && apk del --purge ruby-dev build-base \
+    && rm -rf /var/cache/apk/*
 
-EXPOSE 1025
-EXPOSE 1080
+EXPOSE 1025 1080
 
 CMD ["mailcatcher", "-f", "--ip=0.0.0.0"]
