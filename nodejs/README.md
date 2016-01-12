@@ -1,4 +1,4 @@
-NodeJS utils
-============
+NodeJS
+======
 
-Run with : `docker run -it --name nodejs jeanberu/nodejs /bin/sh`
+Run with : `docker run -it --rm jeanberu/nodejs node`
