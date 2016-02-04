@@ -10,4 +10,4 @@ GGBCLS for some NodeJS utils :
  * [Less](http://lesscss.org/), a CSS pre-processor
  * [Sass](http://sass-lang.com/), CSS with superpowers
 
-Run with : `docker run -it -v .:/src --rm jeanberu/ggbcls [grunt|gulp|bower|coffee|less|lessc|sass|sass-convert] [OPTIONS]`
+Run with : ```docker run --rm -it -v .:/src -u `id -u`:`id -g` jeanberu/ggbcls [grunt|gulp|bower|coffee|less|lessc|sass|sass-convert] [OPTIONS]```
