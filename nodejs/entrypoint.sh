@@ -7,7 +7,7 @@ if [[ -z "$EXISTS" ]]; then
   GID=`stat -c %g .`
 
   adduser -D -h /home/nodejs nodejs
-  sed -i "s/^nodejs:x:1000:1000/nodejs:x:$UID:$GID/g" /etc/passwd
+  sed -i "s/^nodejs:x:[[:digit:]]*:[[:digit:]]*/nodejs:x:$UID:$GID/g" /etc/passwd
   chown nodejs /home/nodejs
 fi
 
