@@ -14,6 +14,7 @@ then
     GID=`stat -c %g /src`
     adduser -D $USR
     sed -i -E s/^$USR:x:[0-9]+:[0-9]+:/$USR:x:$UID:$GID:/ /etc/passwd
+    chown $USR:$USR /home/$USR
 fi
 
 su $USR -s /bin/sh -c "$*"
