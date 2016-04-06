@@ -1,11 +1,12 @@
 FROM php:5.4-apache
 
 RUN apt-get update \
-    && apt-get install -y git libicu-dev libmcrypt-dev libpng-dev libcurl3-dev libxml2-dev libjpeg-dev libpng-dev \
+    && apt-get install -y git libicu-dev libmcrypt-dev libpng-dev libcurl3-dev libxml2-dev libjpeg-dev libpng-dev libssl-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu \
     && docker-php-ext-install mbstring pdo_mysql intl mcrypt gd exif curl soap zip \
-    && pecl install apc \
+    && pecl install -f apc mongo \
+    && docker-php-ext-enable mongo \
     && apt-get autoremove -y \
     && apt-get clean all \
     && rm -rf /var/lib/apt/lists/*
