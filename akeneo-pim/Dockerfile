@@ -6,7 +6,7 @@ RUN apt-get update \
     && docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu \
     && docker-php-ext-install mbstring pdo_mysql intl mcrypt gd exif curl soap zip \
     && pecl install -f apc mongo \
-    && docker-php-ext-enable mongo \
+    && docker-php-ext-enable apc mongo \
     && apt-get autoremove -y \
     && apt-get clean all \
     && rm -rf /var/lib/apt/lists/*
@@ -21,7 +21,7 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN a2enmod rewrite \
     && a2ensite akeneo_pim
 
-WORKDIR /var/www/akeneo_pim
+WORKDIR /var/www/html
 
 EXPOSE 80
 

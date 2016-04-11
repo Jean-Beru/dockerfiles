@@ -12,7 +12,7 @@ app:
     - mysql:mysql
     - mongo:mongo
   volumes:
-    - .:/var/www/akeneo_pim
+    - .:/var/www/html
   ports:
     - 8000:80
 
