@@ -1,3 +1,6 @@
+# IMPORTANT
+This image will not be maintained anymore! Use [jeanberu/docker-akeneo-pim](https://hub.docker.com/r/jeanberu/docker-akeneo-pim/) instead.
+
 # akeneo-pim
 Docker image for Akeneo PIM
 
