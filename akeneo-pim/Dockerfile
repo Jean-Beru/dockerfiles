@@ -1,4 +1,4 @@
-FROM php:5.4-apache
+FROM php:5.6-apache
 
 RUN apt-get update \
     && apt-get install -y git libicu-dev libmcrypt-dev libpng-dev libcurl3-dev libxml2-dev libjpeg-dev libpng-dev libssl-dev \
