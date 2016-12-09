@@ -4,7 +4,7 @@ Docker image for Akeneo PIM
 ## Usage
 
 ```
-docker run --rm -v .:/var/www/html -p 8080:80 --name akeneo_pim jeanberu/akeneo-pim
+docker run --rm -v /path/to/my/project:/var/www/html -p 8080:80 --name akeneo_pim jeanberu/akeneo-pim
 ```
 
 ## Configuration example with docker-compose
