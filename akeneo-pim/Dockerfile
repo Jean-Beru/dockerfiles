@@ -21,7 +21,8 @@ COPY vhost.conf /etc/apache2/sites-available/akeneo_pim.conf
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN a2enmod rewrite && \
-    a2ensite akeneo_pim
+    a2ensite akeneo_pim && \
+    a2dissite 000-default
 
 WORKDIR /var/www/html
 
